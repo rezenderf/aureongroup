@@ -1,0 +1,75 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum PropertyStatus {
+  AVAILABLE
+  RESERVED
+  SOLD
+  ARCHIVED
+}
+
+enum PropertyKind {
+  APARTAMENTO
+  COBERTURA
+  CASA
+  TERRENO
+  COMERCIAL
+}
+
+model Property {
+  id          String         @id @default(cuid())
+  slug        String         @unique
+  title       String
+  subtitle    String?
+  city        String
+  district    String
+  kind        PropertyKind   @default(APARTAMENTO)
+  status      PropertyStatus @default(AVAILABLE)
+  price       BigInt
+  area        Int
+  bedrooms    Int            @default(0)
+  bathrooms   Int            @default(0)
+  parking     Int            @default(0)
+  description String         @db.Text
+  highlights  String[]
+  coverUrl    String?
+  gallery     String[]
+  featured    Boolean        @default(false)
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime       @updatedAt
+  inquiries   Inquiry[]
+
+  @@index([status, featured])
+  @@index([city, district])
+}
+
+model Lead {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  phone     String?
+  message   String   @db.Text
+  source    String?
+  createdAt DateTime @default(now())
+
+  @@index([createdAt])
+}
+
+model Inquiry {
+  id         String   @id @default(cuid())
+  propertyId String
+  property   Property @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+  name       String
+  email      String
+  phone      String?
+  message    String   @db.Text
+  createdAt  DateTime @default(now())
+
+  @@index([propertyId, createdAt])
+}
