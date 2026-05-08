@@ -1,8 +1,22 @@
 import { cookies } from "next/headers";
 import crypto from "node:crypto";
 
-const COOKIE_NAME = "aureon_session";
-const COOKIE_MAX_AGE = 60 * 60 * 8;
+type Realm = "admin" | "corretor";
+
+const COOKIE_NAME: Record<Realm, string> = {
+  admin: "aureon_session",
+  corretor: "aureon_corretor",
+};
+
+const COOKIE_MAX_AGE: Record<Realm, number> = {
+  admin: 60 * 60 * 8,
+  corretor: 60 * 60 * 24 * 7,
+};
+
+const PASSWORD_ENV: Record<Realm, string> = {
+  admin: "ADMIN_PASSWORD",
+  corretor: "CORRETOR_PASSWORD",
+};
 
 function getSecret(): string {
   const secret = process.env.SESSION_SECRET;
@@ -14,20 +28,21 @@ function getSecret(): string {
   return secret;
 }
 
-function getAdminPassword(): string {
-  const pwd = process.env.ADMIN_PASSWORD;
+function getPassword(realm: Realm): string {
+  const key = PASSWORD_ENV[realm];
+  const pwd = process.env[key];
   if (!pwd || pwd.length < 6) {
     throw new Error(
-      "ADMIN_PASSWORD ausente ou muito curto. Defina uma senha com 6+ caracteres."
+      `${key} ausente ou muito curto. Defina uma senha com 6+ caracteres.`
     );
   }
   return pwd;
 }
 
-function sign(payload: string): string {
+function sign(payload: string, realm: Realm): string {
   return crypto
     .createHmac("sha256", getSecret())
-    .update(payload)
+    .update(`${realm}:${payload}`)
     .digest("hex");
 }
 
@@ -38,40 +53,47 @@ function safeEqual(a: string, b: string): boolean {
   return crypto.timingSafeEqual(ba, bb);
 }
 
-export async function login(password: string): Promise<boolean> {
-  const expected = getAdminPassword();
+export async function login(
+  password: string,
+  realm: Realm = "admin"
+): Promise<boolean> {
+  const expected = getPassword(realm);
   if (!safeEqual(password, expected)) return false;
   const issuedAt = Date.now().toString();
-  const token = `${issuedAt}.${sign(issuedAt)}`;
+  const token = `${issuedAt}.${sign(issuedAt, realm)}`;
   const c = await cookies();
-  c.set(COOKIE_NAME, token, {
+  c.set(COOKIE_NAME[realm], token, {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
     sameSite: "lax",
     path: "/",
-    maxAge: COOKIE_MAX_AGE,
+    maxAge: COOKIE_MAX_AGE[realm],
   });
   return true;
 }
 
-export async function logout() {
+export async function logout(realm: Realm = "admin") {
   const c = await cookies();
-  c.delete(COOKIE_NAME);
+  c.delete(COOKIE_NAME[realm]);
 }
 
-export async function isAuthenticated(): Promise<boolean> {
+export async function isAuthenticated(realm: Realm = "admin"): Promise<boolean> {
   const c = await cookies();
-  const token = c.get(COOKIE_NAME)?.value;
+  const token = c.get(COOKIE_NAME[realm])?.value;
   if (!token) return false;
   const [issuedAt, signature] = token.split(".");
   if (!issuedAt || !signature) return false;
   try {
-    if (!safeEqual(signature, sign(issuedAt))) return false;
+    if (!safeEqual(signature, sign(issuedAt, realm))) return false;
   } catch {
     return false;
   }
   const ageMs = Date.now() - Number(issuedAt);
-  if (Number.isNaN(ageMs) || ageMs < 0 || ageMs > COOKIE_MAX_AGE * 1000) {
+  if (
+    Number.isNaN(ageMs) ||
+    ageMs < 0 ||
+    ageMs > COOKIE_MAX_AGE[realm] * 1000
+  ) {
     return false;
   }
   return true;

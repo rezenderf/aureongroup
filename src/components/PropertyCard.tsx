@@ -49,7 +49,7 @@ export default function PropertyCard({ property }: { property: Property }) {
             textTransform: "uppercase",
             color: "var(--lime)",
             border: "1px solid var(--lime-dim)",
-            background: "rgba(10, 11, 8, 0.7)",
+            background: "rgba(10, 8, 7, 0.72)",
             padding: "0.3rem 0.6rem",
             borderRadius: 999,
             backdropFilter: "blur(6px)",
