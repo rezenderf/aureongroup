@@ -42,18 +42,18 @@ export default function Header() {
               borderRadius: 999,
             }}
           >
-            AUR / 25
+            AUR · BR
           </span>
           <span
             style={{
               fontFamily: "var(--font-geist), sans-serif",
-              fontWeight: 400,
+              fontWeight: 500,
               fontSize: "1.1rem",
               letterSpacing: "-0.02em",
               color: "var(--white)",
             }}
           >
-            Aureon<span style={{ color: "var(--lime)" }}>.</span>
+            Aureon Group<span style={{ color: "var(--lime)" }}>.</span>
           </span>
         </Link>
 
@@ -62,10 +62,11 @@ export default function Header() {
             display: "flex",
             gap: "2.4rem",
             fontFamily: "var(--font-geist-mono), monospace",
-            fontSize: "0.65rem",
+            fontSize: "0.7rem",
             textTransform: "uppercase",
-            letterSpacing: "0.28em",
-            color: "var(--fog)",
+            letterSpacing: "0.24em",
+            color: "var(--bone)",
+            fontWeight: 500,
           }}
           className="hide-mobile"
         >

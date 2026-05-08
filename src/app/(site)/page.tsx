@@ -72,12 +72,13 @@ function Hero() {
             style={{
               fontFamily: "var(--font-geist-mono), monospace",
               textTransform: "uppercase",
-              letterSpacing: "0.32em",
-              fontSize: "0.65rem",
-              color: "var(--fog)",
+              letterSpacing: "0.28em",
+              fontSize: "0.7rem",
+              color: "var(--bone)",
+              fontWeight: 500,
             }}
           >
-            Mercado primário · Curadoria 2025 · Em operação
+            Curadoria · Lançamento ao pronto · Em operação
           </span>
         </div>
 
@@ -93,12 +94,19 @@ function Hero() {
             biografia
           </em>
           <span style={{ color: "var(--lime)" }}>.</span>{" "}
-          Patrimônio como{" "}
+          Do{" "}
           <em
             className="serif"
             style={{ fontSize: "1em", letterSpacing: "-0.03em" }}
           >
-            silêncio
+            lançamento
+          </em>{" "}
+          ao{" "}
+          <em
+            className="serif"
+            style={{ fontSize: "1em", letterSpacing: "-0.03em" }}
+          >
+            pronto
           </em>
           <span style={{ color: "var(--lime)" }}>.</span>
         </h1>
@@ -106,16 +114,16 @@ function Hero() {
         <p
           className="body"
           style={{
-            maxWidth: 540,
-            fontSize: "1.05rem",
+            maxWidth: 560,
+            fontSize: "1.1rem",
             lineHeight: 1.65,
             marginBottom: "3rem",
             color: "var(--bone)",
           }}
         >
-          Aureon Prime Estates opera no recorte mais discreto do mercado
-          imobiliário brasileiro: imóveis assinados, mandatos exclusivos e
-          atendimento sob critério. Sem vitrine. Sem ruído.
+          Aureon Group atua em todo o ciclo do imóvel — do lançamento na
+          planta ao pronto para morar. Curadoria com método, foco e
+          atendimento sob critério.
         </p>
 
         <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
@@ -139,10 +147,10 @@ function Hero() {
           className="hero-meta"
         >
           {[
-            { k: "São Paulo", v: "Sede / SP" },
-            { k: "Rio de Janeiro", v: "Praça II / RJ" },
-            { k: "Trancoso", v: "Praça III / BA" },
-            { k: "Internacional", v: "Off-market" },
+            { k: "João Pessoa", v: "Sede / PB" },
+            { k: "São Paulo", v: "Praça / SP" },
+            { k: "Recife", v: "Praça / PE" },
+            { k: "Atendimento", v: "Nacional" },
           ].map((i) => (
             <div
               key={i.k}
@@ -180,15 +188,15 @@ function Hero() {
 
 function Stats() {
   const stats = [
-    { n: "R$ 2,1B", l: "VGV intermediado · 2018–2024" },
-    { n: "84", l: "Mandatos exclusivos ativos" },
-    { n: "11 dias", l: "Tempo médio até proposta firme" },
-    { n: "100%", l: "Operações em mercado primário" },
+    { n: "Lançamento", l: "Reserva direta com a incorporadora" },
+    { n: "Construção", l: "Acompanhamento de obra e repasse" },
+    { n: "Pronto", l: "Estoque de chave em mão" },
+    { n: "Investimento", l: "Renda, valorização e saída" },
   ];
   return (
     <section className="section">
       <div className="section-inner">
-        <SectionMarker number="01" label="Indicadores · 2024" />
+        <SectionMarker number="01" label="Cobertura · Ciclo completo" />
         <div
           style={{
             marginTop: "3rem",
@@ -253,7 +261,7 @@ function Featured({ properties }: { properties: any[] }) {
         </div>
 
         {properties.length === 0 ? (
-          <EmptyState text="Nenhum imóvel em destaque no momento. Mandatos sob NDA disponíveis sob solicitação." />
+          <EmptyState text="Nenhum imóvel em destaque no momento. Buscas dirigidas disponíveis mediante briefing." />
         ) : (
           <div
             style={{
@@ -305,9 +313,8 @@ function Manifesto() {
         >
           <h2 className="headline headline-lg">
             O imóvel certo não é o que aparece{" "}
-            <em className="serif">primeiro</em>. É o que aparece para{" "}
-            <em className="serif">poucos</em>
-            <span style={{ color: "var(--lime)" }}>.</span>
+            <em className="serif">primeiro</em>. É o que se{" "}
+            <em className="serif">ajusta</em> ao seu projeto.
           </h2>
           <div
             style={{
@@ -317,17 +324,17 @@ function Manifesto() {
               paddingTop: "0.8rem",
             }}
           >
-            <p className="body" style={{ fontSize: "1rem" }}>
-              Trabalhamos com mandatos exclusivos e operações off-market.
-              Cada endereço da nossa carteira passa por critério editorial
-              antes de chegar ao cliente.
+            <p className="body" style={{ fontSize: "1.05rem" }}>
+              Trabalhamos com lançamentos, obras em andamento e imóveis
+              prontos. Cada opção apresentada passa por filtro de localização,
+              construtora, planta e condição comercial.
             </p>
-            <p className="body" style={{ fontSize: "1rem" }}>
-              Nosso filtro não é o preço — é o ajuste entre patrimônio,
-              biografia e tempo. Discrição é regra, não cortesia.
+            <p className="body" style={{ fontSize: "1.05rem" }}>
+              Nosso ponto forte é o foco. Pouca opção, bem escolhida — em vez
+              de catálogo. O cliente decide melhor quando recebe menos.
             </p>
             <Link href="/sobre" className="link-arrow" style={{ marginTop: "0.6rem" }}>
-              Ler a casa →
+              Conheça a casa →
             </Link>
           </div>
         </div>
@@ -345,23 +352,23 @@ function PracticeAreas() {
   const areas = [
     {
       n: "I",
-      title: "Mandato exclusivo",
-      desc: "Representação singular para venda de imóveis acima de R$ 8M.",
+      title: "Lançamentos",
+      desc: "Acesso a tabelas de pré-lançamento, primeiro lote e condições de incorporadora.",
     },
     {
       n: "II",
-      title: "Buyer side",
-      desc: "Mira cirúrgica para clientes com tese de patrimônio definida.",
+      title: "Em obra",
+      desc: "Repasse, troca de titularidade e oportunidades durante a construção.",
     },
     {
       n: "III",
-      title: "Off-market",
-      desc: "Acesso a oportunidades fora de portais, sob NDA.",
+      title: "Pronto",
+      desc: "Imóveis com chave em mão, semi-novos e usados em bairros consolidados.",
     },
     {
       n: "IV",
-      title: "Consultoria",
-      desc: "Avaliação patrimonial, análise de exposição e estratégia de saída.",
+      title: "Investimento",
+      desc: "Análise de tese, projeção de retorno e estratégia de saída.",
     },
   ];
   return (
@@ -411,7 +418,7 @@ function PracticeAreas() {
               <h3
                 style={{
                   fontFamily: "var(--font-geist), sans-serif",
-                  fontWeight: 300,
+                  fontWeight: 400,
                   fontSize: "1.4rem",
                   letterSpacing: "-0.025em",
                   color: "var(--white)",
@@ -461,8 +468,8 @@ function CTASection() {
           className="cta-block"
         >
           <h2 className="headline headline-md" style={{ maxWidth: 640 }}>
-            Procurando endereço, comprador ou{" "}
-            <em className="serif">tese</em>?
+            Lançamento, repasse ou{" "}
+            <em className="serif">pronto para morar</em>?
           </h2>
           <div
             style={{
@@ -472,9 +479,9 @@ function CTASection() {
               alignItems: "flex-start",
             }}
           >
-            <p className="body-fog" style={{ fontSize: "0.95rem", margin: 0 }}>
-              Entre em contato pela curadoria. Resposta em até 24h úteis,
-              sob NDA quando aplicável.
+            <p className="body" style={{ fontSize: "1rem", margin: 0, color: "var(--bone)" }}>
+              Mande seu briefing. Respondemos em até 24h úteis com até três
+              opções aderentes — não com uma lista infinita.
             </p>
             <Link href="/contato" className="cta">
               Iniciar conversa

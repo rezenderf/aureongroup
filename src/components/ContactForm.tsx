@@ -26,8 +26,9 @@ export default function ContactForm({ source }: { source?: string }) {
         <h3 className="headline headline-md" style={{ margin: 0 }}>
           Recebemos seu contato.
         </h3>
-        <p className="body-fog" style={{ margin: 0 }}>
-          Um sócio retornará em até 24h úteis. Sob NDA quando aplicável.
+        <p className="body" style={{ margin: 0, color: "var(--bone)" }}>
+          Um consultor da casa retornará em até 24h úteis com um shortlist
+          aderente ao seu briefing.
         </p>
       </div>
     );
@@ -88,7 +89,7 @@ export default function ContactForm({ source }: { source?: string }) {
           id="message"
           name="message"
           required
-          placeholder="Descreva sua tese, endereço de interesse ou contexto patrimonial."
+          placeholder="Conte região, momento da compra (lançamento, em obra ou pronto) e faixa de orçamento."
         />
         {state.fieldErrors?.message && <FieldError msg={state.fieldErrors.message} />}
       </div>

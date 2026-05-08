@@ -64,28 +64,29 @@ export default async function ImoveisPage({
             zIndex: 2,
           }}
         >
-          <SectionMarker number="00" label="Portfólio · 2025" />
+          <SectionMarker number="00" label="Portfólio · Atual" />
           <h1
             className="headline headline-xl"
             style={{ maxWidth: 1100, marginTop: "2.5rem" }}
           >
-            Curadoria{" "}
-            <em className="serif">aberta</em>
+            Lançamento ao{" "}
+            <em className="serif">pronto</em>
             <span style={{ color: "var(--lime)" }}>.</span>{" "}
             <span style={{ color: "var(--fog)" }}>
-              {properties.length.toString().padStart(2, "0")} endereços.
+              {properties.length.toString().padStart(2, "0")} imóveis.
             </span>
           </h1>
           <p
             className="body"
             style={{
-              maxWidth: 580,
+              maxWidth: 600,
               marginTop: "2.5rem",
-              fontSize: "1.05rem",
+              fontSize: "1.1rem",
             }}
           >
-            Endereços visíveis. Operações off-market disponíveis sob NDA mediante
-            briefing.
+            Lançamentos, imóveis em obra e prontos para morar. Use os filtros
+            ou mande um briefing — buscamos opções fora desta lista quando o
+            ajuste pede.
           </p>
         </div>
       </section>
@@ -108,10 +109,10 @@ export default async function ImoveisPage({
                 textAlign: "center",
               }}
             >
-              <span className="eyebrow">Nenhum endereço encontrado</span>
-              <p className="body-fog" style={{ marginTop: "1rem", maxWidth: 480, marginInline: "auto" }}>
-                Mande um briefing pela página de contato. Carteiras off-market
-                podem corresponder ao seu critério.
+              <span className="eyebrow">Nenhum imóvel encontrado</span>
+              <p className="body" style={{ marginTop: "1rem", maxWidth: 480, marginInline: "auto", color: "var(--bone)" }}>
+                Mande um briefing pela página de contato. Conseguimos buscar
+                opções fora desta lista — em lançamento, repasse ou pronto.
               </p>
             </div>
           ) : (

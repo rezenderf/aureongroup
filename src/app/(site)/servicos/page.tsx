@@ -4,56 +4,56 @@ import SectionMarker from "@/components/SectionMarker";
 export const metadata = {
   title: "Atuação · Aureon Group",
   description:
-    "Frentes de atuação da Aureon Prime Estates: mandatos exclusivos, buyer side, off-market e consultoria patrimonial.",
+    "Atuação da Aureon Group: lançamentos, repasse durante a obra, imóveis prontos e consultoria de investimento.",
 };
 
 const services = [
   {
     n: "01",
-    title: "Mandato exclusivo",
-    eyebrow: "Sell side · Curadoria editorial",
-    body: "Representação singular para venda de imóveis acima de R$ 8M. Dossier técnico, plano de mira, comprador qualificado.",
+    title: "Lançamentos",
+    eyebrow: "Planta · Pré-lançamento",
+    body: "Acesso a tabelas de pré-lançamento e primeiro lote junto às incorporadoras parceiras. Reserva direta, condições de fundação e plano de pagamento alongado.",
     bullets: [
-      "Avaliação patrimonial com banca interna",
-      "Material editorial e curadoria fotográfica autoral",
-      "Lista fechada de potenciais compradores",
-      "Negociação conduzida exclusivamente por sócio",
+      "Análise de planta, fachada e materiais",
+      "Comparativo de tabelas e descontos vigentes",
+      "Reserva direta com a incorporadora",
+      "Acompanhamento até a entrega das chaves",
     ],
   },
   {
     n: "02",
-    title: "Buyer side",
-    eyebrow: "Mira cirúrgica · Tese definida",
-    body: "Para clientes com tese de patrimônio formalizada. Identificamos, qualificamos e negociamos endereços que cabem na biografia.",
+    title: "Em obra",
+    eyebrow: "Repasse · Troca de titularidade",
+    body: "Oportunidades durante a construção: repasse de cota, troca de titularidade e renegociação de saldo devedor com financiamento bancário.",
     bullets: [
-      "Briefing técnico com mapa de exposição",
-      "Acesso a carteira off-market e mandatos",
-      "Diligência jurídica e estrutural",
-      "Estruturação de aquisição (PJ, holding, offshore)",
+      "Diligência da matrícula e contrato",
+      "Análise do saldo a quitar e índice de correção",
+      "Suporte para financiamento e assinatura",
+      "Coordenação com a construtora",
     ],
   },
   {
     n: "03",
-    title: "Off-market",
-    eyebrow: "Acesso restrito · NDA por padrão",
-    body: "Oportunidades fora de portais e fora de mídia. Operações só apresentadas após assinatura de NDA bilateral.",
+    title: "Pronto para morar",
+    eyebrow: "Chave em mão · Semi-novo · Usado",
+    body: "Imóveis prontos em bairros consolidados ou regiões em valorização. Apartamentos, casas, coberturas e comerciais — para morar ou alugar.",
     bullets: [
-      "Dossiê reservado por endereço",
-      "Encontro presencial obrigatório",
-      "Lista de clientes pré-qualificados",
-      "Histórico curado por sócio",
+      "Visita acompanhada por consultor da casa",
+      "Avaliação técnica e comparativo de mercado",
+      "Negociação de valor e condições",
+      "Apoio em financiamento e documentação",
     ],
   },
   {
     n: "04",
-    title: "Consultoria patrimonial",
-    eyebrow: "Estratégia · Avaliação · Saída",
-    body: "Para holdings, family offices e investidores com exposição imobiliária. Análise, recomendação e execução de saída.",
+    title: "Investimento",
+    eyebrow: "Renda · Valorização · Saída",
+    body: "Para quem compra imóvel como investimento: análise de tese, projeção de retorno, montagem de carteira e estratégia de saída.",
     bullets: [
-      "Avaliação multi-cenário (8 anos)",
-      "Análise de exposição e diversificação",
-      "Recomendação de timing e estrutura",
-      "Execução completa sob acompanhamento",
+      "Estudo de demanda da região",
+      "Projeção de aluguel e valorização",
+      "Estratégia de short-stay vs long-stay",
+      "Plano de saída com janelas alvo",
     ],
   },
 ];
@@ -93,13 +93,14 @@ export default function ServicosPage() {
           <p
             className="body"
             style={{
-              maxWidth: 580,
+              maxWidth: 600,
               marginTop: "2.5rem",
-              fontSize: "1.05rem",
+              fontSize: "1.1rem",
             }}
           >
-            Cada frente opera com método próprio, mas sob a mesma filosofia
-            editorial: critério, discrição e tempo de patrimônio.
+            Cobrimos todo o ciclo do imóvel — do lançamento na planta ao pronto
+            para morar — com método e foco. Aderência ao briefing antes de
+            volume de oferta.
           </p>
         </div>
       </section>
@@ -147,7 +148,7 @@ export default function ServicosPage() {
                 <h3
                   style={{
                     fontFamily: "var(--font-geist), sans-serif",
-                    fontWeight: 300,
+                    fontWeight: 400,
                     fontSize: "2.2rem",
                     letterSpacing: "-0.035em",
                     color: "var(--white)",
@@ -179,7 +180,7 @@ export default function ServicosPage() {
                         alignItems: "flex-start",
                         color: "var(--bone)",
                         fontSize: "0.9rem",
-                        fontWeight: 300,
+                        fontWeight: 400,
                         lineHeight: 1.55,
                       }}
                     >

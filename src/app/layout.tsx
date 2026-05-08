@@ -22,15 +22,15 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "Aureon Group · Curadoria silenciosa de imóveis assinados",
+  title: "Aureon Group · Curadoria de imóveis do lançamento ao pronto",
   description:
-    "Aureon Prime Estates. Mercado primário, endereços de autor, atendimento sob critério. São Paulo · Rio de Janeiro · Trancoso.",
+    "Aureon Group. Curadoria de imóveis residenciais e investimentos, do lançamento ao pronto, com método e foco. Sede em João Pessoa · PB.",
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL ?? "https://aureongroup.com.br"
   ),
   openGraph: {
     title: "Aureon Group",
-    description: "Curadoria silenciosa de imóveis assinados.",
+    description: "Curadoria de imóveis do lançamento ao pronto.",
     type: "website",
     locale: "pt_BR",
   },
