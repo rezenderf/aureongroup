@@ -15,12 +15,13 @@ Site institucional do Aureon Group. Next.js 15 (App Router) + Prisma + Postgres,
 2. Adicione o plugin **Postgres** ao projeto. A Railway injeta `DATABASE_URL` automaticamente no serviço.
 3. Configure as variáveis abaixo em `Variables`:
 
-   | Var               | Obrigatório | Descrição                                                                   |
-   | ----------------- | ----------- | --------------------------------------------------------------------------- |
-   | `DATABASE_URL`    | sim         | Preenchida pelo plugin Postgres da Railway.                                 |
-   | `ADMIN_PASSWORD`  | sim         | Senha do painel `/admin` (mín. 6 caracteres).                               |
-   | `SESSION_SECRET`  | sim         | Segredo para assinar sessão. Gere com `openssl rand -hex 32`.               |
-   | `NEXT_PUBLIC_SITE_URL` | não    | URL pública (usada em OG/metadata).                                         |
+   | Var                  | Obrigatório | Descrição                                                                   |
+   | -------------------- | ----------- | --------------------------------------------------------------------------- |
+   | `DATABASE_URL`       | sim         | Preenchida pelo plugin Postgres da Railway.                                 |
+   | `ADMIN_PASSWORD`     | sim         | Senha do painel `/admin` (mín. 6 caracteres).                               |
+   | `CORRETOR_PASSWORD`  | sim         | Senha da área do corretor `/corretor` (mín. 6 caracteres).                  |
+   | `SESSION_SECRET`     | sim         | Segredo para assinar sessões. Gere com `openssl rand -hex 32`.              |
+   | `NEXT_PUBLIC_SITE_URL` | não       | URL pública (usada em OG/metadata).                                         |
 
 4. Pronto. Não há nada mais a configurar:
    - `npm install` roda `prisma generate` automaticamente (postinstall).
@@ -55,6 +56,9 @@ src/
       login/           ← /admin/login
       imoveis/         ← /admin/imoveis (CRUD)
       leads/           ← /admin/leads
+    corretor/          ← área restrita do time de vendas
+      login/           ← /corretor/login
+      page.tsx         ← lista de sistemas (CRM, etc.)
     actions/           ← server actions públicas
   components/          ← UI compartilhada
   lib/                 ← prisma, auth, format
@@ -65,7 +69,11 @@ prisma/
 
 ## Identidade visual
 
-A identidade segue o sistema **dark luxury tech**: paleta bicromática (lime `#C7F250` sobre noir `#0A0B08`), tipografia Geist + Instrument Serif itálico para acentos editoriais, glow radial sutil e textura de noise overlay. Tokens em `src/app/globals.css`.
+A identidade segue o sistema **dark luxury / champagne**: paleta bicromática (champagne gold `#D4B26A` sobre preto ônix `#0A0807`), tipografia Geist + Instrument Serif itálico para acentos editoriais, glow radial sutil e textura de noise overlay. Tokens em `src/app/globals.css`.
+
+## Para adicionar mais links na área do corretor
+
+Edite o array `LINKS` em `src/app/corretor/page.tsx` adicionando novos itens com `category`, `title`, `description`, `href` e `cta`.
 
 ## Comandos úteis
 

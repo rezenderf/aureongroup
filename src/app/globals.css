@@ -1,18 +1,25 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #0A0B08;
-  --bg-soft: #131510;
-  --bg-card: #181B14;
-  --line: #1F2419;
-  --line-bright: #2A3120;
-  --lime: #C7F250;
-  --lime-deep: #9BC72A;
-  --lime-glow: #DBFF7A;
-  --lime-dim: #5C7320;
-  --fog: #6B7058;
-  --bone: #E8E6DD;
-  --white: #F5F4EE;
+  --bg: #0A0807;
+  --bg-soft: #13100D;
+  --bg-card: #1A1612;
+  --line: #241F18;
+  --line-bright: #332C22;
+  --gold: #D4B26A;
+  --gold-deep: #A8884A;
+  --gold-glow: #E8CB86;
+  --gold-dim: #5C4A28;
+  --fog: #7A6F58;
+  --bone: #EBE3D2;
+  --white: #F7F1E1;
+
+  /* legacy aliases — keep lime tokens pointing at gold so quaisquer estilos
+     residuais continuem aderentes ao novo sistema champagne gold. */
+  --lime: var(--gold);
+  --lime-deep: var(--gold-deep);
+  --lime-glow: var(--gold-glow);
+  --lime-dim: var(--gold-dim);
 }
 
 @theme inline {
@@ -21,10 +28,10 @@
   --color-bg-card: var(--bg-card);
   --color-line: var(--line);
   --color-line-bright: var(--line-bright);
-  --color-lime: var(--lime);
-  --color-lime-deep: var(--lime-deep);
-  --color-lime-glow: var(--lime-glow);
-  --color-lime-dim: var(--lime-dim);
+  --color-gold: var(--gold);
+  --color-gold-deep: var(--gold-deep);
+  --color-gold-glow: var(--gold-glow);
+  --color-gold-dim: var(--gold-dim);
   --color-fog: var(--fog);
   --color-bone: var(--bone);
   --color-white: var(--white);
@@ -294,8 +301,9 @@ input, textarea, select {
   opacity: 0.6;
 }
 
+.glow-gold,
 .glow-lime {
-  background: radial-gradient(circle, rgba(199, 242, 80, 0.18) 0%, transparent 65%);
+  background: radial-gradient(circle, rgba(212, 178, 106, 0.16) 0%, transparent 65%);
 }
 
 .bg-grid {
@@ -303,8 +311,8 @@ input, textarea, select {
   inset: 0;
   pointer-events: none;
   background-image:
-    linear-gradient(rgba(199, 242, 80, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(199, 242, 80, 0.04) 1px, transparent 1px);
+    linear-gradient(rgba(212, 178, 106, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212, 178, 106, 0.05) 1px, transparent 1px);
   background-size: 80px 80px;
   -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
   mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
@@ -314,8 +322,8 @@ input, textarea, select {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: var(--lime);
-  box-shadow: 0 0 12px var(--lime);
+  background: var(--gold);
+  box-shadow: 0 0 12px var(--gold);
   animation: pulse 2s ease infinite;
   display: inline-block;
 }
