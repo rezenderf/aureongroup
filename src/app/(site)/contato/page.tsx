@@ -41,13 +41,14 @@ export default function ContatoPage() {
           <p
             className="body"
             style={{
-              maxWidth: 540,
+              maxWidth: 580,
               marginTop: "2.5rem",
-              fontSize: "1.05rem",
+              fontSize: "1.1rem",
             }}
           >
-            Resposta em até 24h úteis, conduzida por sócio. Sob NDA quando
-            aplicável.
+            Conte o que você procura — lançamento, repasse ou pronto para
+            morar — que respondemos em até 24h úteis com um shortlist
+            aderente.
           </p>
         </div>
       </section>
@@ -82,8 +83,9 @@ export default function ContatoPage() {
 function ContactInfo() {
   const items = [
     { label: "E-mail", value: "contato@aureongroup.com.br", href: "mailto:contato@aureongroup.com.br" },
-    { label: "Telefone", value: "+55 11 3000-0000", href: "tel:+551130000000" },
-    { label: "Sede", value: "Rua das Magnólias, 480 · Jardins · São Paulo · SP" },
+    { label: "Telefone", value: "+55 83 3000-0000", href: "tel:+558330000000" },
+    { label: "Sede", value: "João Pessoa · PB" },
+    { label: "Praças", value: "São Paulo · Recife · Atendimento nacional" },
     { label: "Horário", value: "Seg–Sex · 09h às 19h" },
   ];
 
@@ -94,9 +96,9 @@ function ContactInfo() {
           Linhas{" "}
           <em className="serif">diretas</em>.
         </h2>
-        <p className="body-fog" style={{ marginTop: "1.2rem", maxWidth: 420 }}>
-          Para mandatos exclusivos, indique o endereço-alvo no campo de
-          mensagem. NDA pode ser solicitado antes da apresentação.
+        <p className="body" style={{ marginTop: "1.2rem", maxWidth: 440, color: "var(--bone)" }}>
+          Atendimento por consultor da casa, do briefing à assinatura.
+          Indique região, faixa de orçamento e momento da compra.
         </p>
       </div>
 

@@ -1,6 +1,6 @@
 # Aureon Group
 
-Site institucional da Aureon Prime Estates. Next.js 15 (App Router) + Prisma + Postgres, com painel administrativo simples para CRUD de imóveis e leads.
+Site institucional do Aureon Group. Next.js 15 (App Router) + Prisma + Postgres, com painel administrativo simples para CRUD de imóveis e leads.
 
 ## Stack
 

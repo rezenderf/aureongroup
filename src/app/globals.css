@@ -43,7 +43,7 @@ html, body {
   background: var(--bg);
   color: var(--bone);
   font-family: var(--font-geist), system-ui, sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.55;
   margin: 0;
   padding: 0;
@@ -73,16 +73,18 @@ input, textarea, select {
 .mono {
   font-family: var(--font-geist-mono), monospace;
   text-transform: uppercase;
-  letter-spacing: 0.3em;
-  font-size: 0.7rem;
+  letter-spacing: 0.26em;
+  font-size: 0.72rem;
+  font-weight: 500;
   color: var(--fog);
 }
 
 .eyebrow {
   font-family: var(--font-geist-mono), monospace;
   text-transform: uppercase;
-  letter-spacing: 0.32em;
-  font-size: 0.65rem;
+  letter-spacing: 0.26em;
+  font-size: 0.7rem;
+  font-weight: 500;
   color: var(--fog);
 }
 
@@ -95,9 +97,9 @@ input, textarea, select {
 
 .headline {
   font-family: var(--font-geist), sans-serif;
-  font-weight: 300;
-  letter-spacing: -0.04em;
-  line-height: 0.95;
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 0.98;
   color: var(--white);
 }
 
@@ -119,12 +121,12 @@ input, textarea, select {
 
 .body-fog {
   color: var(--fog);
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .body {
   color: var(--bone);
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.6;
 }
 
@@ -222,9 +224,10 @@ input, textarea, select {
 
 .stat-label {
   font-family: var(--font-geist-mono), monospace;
-  font-size: 0.65rem;
+  font-size: 0.7rem;
   text-transform: uppercase;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.24em;
+  font-weight: 500;
   color: var(--fog);
   margin-top: 0.6rem;
 }
@@ -250,8 +253,9 @@ input, textarea, select {
   gap: 0.9rem;
   font-family: var(--font-geist-mono), monospace;
   text-transform: uppercase;
-  letter-spacing: 0.3em;
-  font-size: 0.65rem;
+  letter-spacing: 0.24em;
+  font-size: 0.7rem;
+  font-weight: 500;
 }
 
 .section-marker-num {
@@ -353,7 +357,7 @@ input, textarea, select {
   color: var(--bone);
   padding: 0.85rem 1rem;
   font-size: 0.95rem;
-  font-weight: 300;
+  font-weight: 400;
   border-radius: 0;
   outline: none;
   transition: border-color 0.2s ease;
@@ -392,7 +396,7 @@ input, textarea, select {
   padding: 1rem;
   border-bottom: 1px solid var(--line);
   color: var(--bone);
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .table tr:hover td {

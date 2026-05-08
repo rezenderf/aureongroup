@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata = {
   title: "A casa · Aureon Group",
   description:
-    "A Aureon nasceu como uma casa de curadoria, não como uma imobiliária. Filosofia, método e biografia da firma.",
+    "Aureon Group: curadoria de imóveis do lançamento ao pronto. Filosofia, método e biografia da casa.",
 };
 
 export default function SobrePage() {
@@ -52,11 +52,12 @@ function PageHero() {
         </h1>
         <p
           className="body"
-          style={{ maxWidth: 580, marginTop: "2.5rem", fontSize: "1.05rem" }}
+          style={{ maxWidth: 600, marginTop: "2.5rem", fontSize: "1.1rem" }}
         >
-          A Aureon Prime Estates foi fundada em 2018 como reação ao excesso
-          do mercado de luxo. Onde havia barulho, escolhemos silêncio. Onde
-          havia inventário, escolhemos seleção.
+          A Aureon Group nasceu para reorganizar a forma como se compra
+          imóvel: do lançamento na planta ao pronto para morar, com método
+          e foco. Onde havia catálogo, oferecemos seleção. Onde havia ruído,
+          oferecemos clareza.
         </p>
       </div>
     </section>
@@ -68,17 +69,17 @@ function Pillars() {
     {
       n: "01",
       title: "Critério",
-      desc: "Cada imóvel passa por banca interna antes de virar mandato. Recusamos mais do que aceitamos.",
+      desc: "Filtramos cada lançamento, repasse e imóvel pronto antes de apresentar. Recusamos mais do que aceitamos.",
     },
     {
       n: "02",
-      title: "Discrição",
-      desc: "Mandatos exclusivos. NDA por padrão. Sem portais. Sem placa.",
+      title: "Foco",
+      desc: "Pouca opção, bem escolhida. O cliente recebe um shortlist com até três imóveis aderentes — não um catálogo.",
     },
     {
       n: "03",
-      title: "Tempo",
-      desc: "Operamos em tempo de patrimônio, não em tempo de mídia. Pressa nunca foi sinônimo de bom negócio.",
+      title: "Acompanhamento",
+      desc: "Da reserva à entrega das chaves. Diligência, repasse, financiamento e pós-venda sob acompanhamento próprio.",
     },
   ];
   return (
@@ -127,7 +128,7 @@ function Pillars() {
               <h3
                 style={{
                   fontFamily: "var(--font-geist), sans-serif",
-                  fontWeight: 300,
+                  fontWeight: 400,
                   fontSize: "2rem",
                   letterSpacing: "-0.03em",
                   color: "var(--white)",
@@ -156,28 +157,28 @@ function Method() {
   const steps = [
     {
       n: "I",
-      title: "Briefing fechado",
-      desc: "Conversa técnica sob NDA. Mapeamos tese, prazo, exposição e biografia.",
+      title: "Briefing",
+      desc: "Conversa para mapear momento de vida, prazo, orçamento e prioridade entre lançamento, obra e pronto.",
     },
     {
       n: "II",
       title: "Mira",
-      desc: "Cruzamento entre carteira off-market, mandatos exclusivos e busca dirigida.",
+      desc: "Cruzamento entre carteira de incorporadoras parceiras, repasses e estoque pronto que se ajustam ao briefing.",
     },
     {
       n: "III",
       title: "Curadoria",
-      desc: "Pré-seleção interna. O cliente recebe três opções no máximo.",
+      desc: "Shortlist com até três imóveis. Cada opção vem com dossiê de planta, condições e contexto da região.",
     },
     {
       n: "IV",
-      title: "Visita guiada",
-      desc: "Apresentação cirúrgica com dossiê técnico, jurídico e patrimonial.",
+      title: "Visita",
+      desc: "Apresentação técnica do estande, da obra ou do imóvel pronto, sempre acompanhada por consultor da casa.",
     },
     {
       n: "V",
-      title: "Estruturação",
-      desc: "Negociação, diligência e fechamento sob acompanhamento dedicado.",
+      title: "Fechamento",
+      desc: "Negociação, diligência jurídica, financiamento e repasse — até a entrega das chaves.",
     },
   ];
   return (
@@ -219,7 +220,7 @@ function Method() {
               <h3
                 style={{
                   fontFamily: "var(--font-geist), sans-serif",
-                  fontWeight: 300,
+                  fontWeight: 400,
                   fontSize: "1.5rem",
                   letterSpacing: "-0.025em",
                   color: "var(--white)",
@@ -264,18 +265,19 @@ function Team() {
         >
           <div>
             <h2 className="headline headline-md">
-              Time enxuto, agenda{" "}
-              <em className="serif">cheia</em>.
+              Time enxuto, atendimento{" "}
+              <em className="serif">próximo</em>.
             </h2>
             <p
               className="body"
-              style={{ fontSize: "1rem", marginTop: "1.5rem", maxWidth: 520 }}
+              style={{ fontSize: "1.05rem", marginTop: "1.5rem", maxWidth: 540 }}
             >
-              Doze profissionais, três praças, uma única filosofia operacional.
-              Cada cliente é atendido por sócio. Sem etapa via assistente.
+              Cada cliente é acompanhado por consultor da casa do briefing à
+              entrega das chaves. Sem repasse via assistente, sem corretor
+              terceirizado.
             </p>
             <Link href="/contato" className="cta" style={{ marginTop: "2rem" }}>
-              Falar com sócio
+              Falar com a casa
             </Link>
           </div>
           <div
@@ -288,10 +290,10 @@ function Team() {
             }}
           >
             {[
-              { k: "Fundação", v: "2018" },
-              { k: "Equipe", v: "12 prof." },
-              { k: "Praças", v: "3 BR + 1 INT" },
-              { k: "Idioma", v: "PT · EN · ES" },
+              { k: "Sede", v: "João Pessoa · PB" },
+              { k: "Praças", v: "PB · SP · PE" },
+              { k: "Atuação", v: "Lançamento → pronto" },
+              { k: "Atendimento", v: "Nacional" },
             ].map((i) => (
               <div
                 key={i.k}
@@ -305,8 +307,14 @@ function Team() {
               >
                 <span className="eyebrow">{i.k}</span>
                 <span
-                  className="serif"
-                  style={{ fontSize: "1.8rem", lineHeight: 1 }}
+                  style={{
+                    fontFamily: "var(--font-geist), sans-serif",
+                    fontSize: "1.15rem",
+                    color: "var(--white)",
+                    fontWeight: 500,
+                    letterSpacing: "-0.02em",
+                    lineHeight: 1.2,
+                  }}
                 >
                   {i.v}
                 </span>

@@ -225,7 +225,7 @@ export default async function PropertyDetailPage({
                           padding: "1.4rem 1.6rem",
                           color: "var(--bone)",
                           fontSize: "0.95rem",
-                          fontWeight: 300,
+                          fontWeight: 400,
                           display: "flex",
                           gap: "0.8rem",
                           alignItems: "flex-start",
@@ -341,7 +341,7 @@ function Spec({
                 fontFamily: "var(--font-geist), sans-serif",
                 fontSize: "1.4rem",
                 color: "var(--white)",
-                fontWeight: 300,
+                fontWeight: 400,
                 letterSpacing: "-0.025em",
               }
         }

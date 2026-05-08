@@ -66,7 +66,7 @@ export default function PropertyCard({ property }: { property: Property }) {
         <h3
           style={{
             fontFamily: "var(--font-geist), sans-serif",
-            fontWeight: 300,
+            fontWeight: 400,
             fontSize: "1.6rem",
             letterSpacing: "-0.03em",
             lineHeight: 1.05,

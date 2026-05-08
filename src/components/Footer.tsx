@@ -25,7 +25,7 @@ export default function Footer() {
           <div
             style={{
               fontFamily: "var(--font-geist), sans-serif",
-              fontWeight: 300,
+              fontWeight: 400,
               fontSize: "1.6rem",
               letterSpacing: "-0.03em",
               color: "var(--white)",
@@ -38,10 +38,10 @@ export default function Footer() {
           </div>
           <p
             className="body-fog"
-            style={{ fontSize: "0.85rem", maxWidth: 360, lineHeight: 1.6 }}
+            style={{ fontSize: "0.9rem", maxWidth: 380, lineHeight: 1.6, color: "var(--bone)" }}
           >
-            Aureon Prime Estates. Curadoria silenciosa de imóveis assinados em
-            mercados primários. Atendimento sob critério.
+            Aureon Group. Curadoria de imóveis do lançamento ao pronto, com
+            método e foco. Atendimento sob critério.
           </p>
         </div>
 
@@ -53,18 +53,18 @@ export default function Footer() {
         </FooterCol>
 
         <FooterCol title="Praças">
+          <span>João Pessoa · Sede</span>
           <span>São Paulo</span>
-          <span>Rio de Janeiro</span>
-          <span>Trancoso</span>
-          <span>Internacional</span>
+          <span>Recife</span>
+          <span>Atendimento nacional</span>
         </FooterCol>
 
         <FooterCol title="Contato">
           <a href="mailto:contato@aureongroup.com.br">
             contato@aureongroup.com.br
           </a>
-          <a href="tel:+551130000000">+55 11 3000-0000</a>
-          <span>São Paulo · BR</span>
+          <a href="tel:+558330000000">+55 83 3000-0000</a>
+          <span>João Pessoa · PB</span>
         </FooterCol>
       </div>
 
@@ -84,9 +84,9 @@ export default function Footer() {
           color: "var(--fog)",
         }}
       >
-        <span>© {new Date().getFullYear()} Aureon Group</span>
+        <span>© Aureon Group · Todos os direitos reservados</span>
         <span style={{ display: "inline-flex", alignItems: "center", gap: "0.6rem" }}>
-          <span className="live-dot" /> Operando · {new Date().getFullYear()}
+          <span className="live-dot" /> Em operação
         </span>
       </div>
 
@@ -131,7 +131,7 @@ function FooterCol({
           gap: "0.55rem",
           color: "var(--bone)",
           fontSize: "0.85rem",
-          fontWeight: 300,
+          fontWeight: 400,
         }}
       >
         {children}
